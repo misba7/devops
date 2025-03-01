@@ -63,8 +63,8 @@ jobs:
         
     - name: Verify deployment
       run: |
-        kubectl rollout status deployment/microservice-app
+        kubectl rollout status deployment/microservice
         
     - name: Get Service URL
       run: |
-        echo "Service is available at: $(kubectl get service microservice-app -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')"
+        echo "Service is available at: $(kubectl get service microservice -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')"
